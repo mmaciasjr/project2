@@ -2,6 +2,14 @@
 
 # MySQL Registration with JWT & Passport Authentication
 
+## How to run this app
+1. cd to `<root>/client`
+2. run `npm install`
+3. run `npm start`
+4. in a separate shell, cd to `<root>/api`
+5. run `npm install`
+6. run `npm start`
+
 ## About This App
 
 This application is a full-stack MERN app (MySQL, Express, React and
@@ -20,3 +28,4 @@ There's also a password reset email that can be sent if a user forgets their pas
 I've added Swagger documentation to the API side of the application for easer, in browser API testing. The Swagger UI can be accessed by running the application then going to `http://localhost:3003/api-docs/`. From there all of the server-side routes can be accessed and tested, just as if you were using the client side interface. Required properties and params are specified and secured routes requiring a JWT token are noted with the little lock at the top right hand corner of the route.
 
 To add a correctly formatted JWT token into the input box, generate the token with the `/loginUser` route, copy the `token` property's value, and paste it into the input with `JWT <token string>`; the "JWT " is required to format the header authorization correctly.
+
