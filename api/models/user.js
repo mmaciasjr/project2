@@ -18,18 +18,14 @@
  *       password:
  *         type: string
  *         format: password
- *       resetPasswordToken:
- *         type: string
- *       resetPasswordExpires:
- *         type: string
- *         format: date-time
  *       required:
  *         - email
  *         - username
  *         - password
  */
 
-module.exports = (sequelize, type) => sequelize.define('user', {
+module.exports = (sequelize, type) =>
+  sequelize.define('user', {
     id: {
       type: type.INTEGER,
       primaryKey: true,
@@ -49,6 +45,4 @@ module.exports = (sequelize, type) => sequelize.define('user', {
       type: type.STRING,
       allowNull: false,
     },
-    resetPasswordToken: type.STRING,
-    resetPasswordExpires: type.DATE,
   });
