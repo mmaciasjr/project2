@@ -2,38 +2,6 @@
 import passport from 'passport';
 import User from '../sequelize';
 
-/**
- * @swagger
- * /findUser:
- *   get:
- *     tags:
- *       - Users
- *     name: Find user
- *     summary: Finds a user
- *     security:
- *       - bearerAuth: []
- *     consumes:
- *       - application/json
- *     produces:
- *       - application/json
- *     parameters:
- *       - in: query
- *         name: username
- *         schema:
- *           type: string
- *         required:
- *           - username
- *     responses:
- *       '200':
- *         description: A single user object
- *         schema:
- *           $ref: '#/definitions/User'
- *       '401':
- *         description: No auth token / no user found in db with that name
- *       '403':
- *         description: JWT token and username from client don't match
- */
-
 module.exports = (app) => {
   app.get('/findUser', (req, res, next) => {
     passport.authenticate('jwt', { session: false }, (err, user, info) => {

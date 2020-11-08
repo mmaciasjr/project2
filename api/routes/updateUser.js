@@ -2,44 +2,6 @@
 import passport from 'passport';
 import User from '../sequelize';
 
-/**
- * @swagger
- * /updateUser:
- *   put:
- *     tags:
- *       - Users
- *     name: Update User
- *     summary: Update user info
- *     security:
- *       - bearerAuth: []
- *     consumes:
- *       - application/json
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: body
- *         in: body
- *         schema:
- *           $ref: '#/definitions/User'
- *           type: object
- *           properties:
- *             first_name:
- *               type: string
- *             last_name:
- *               type: string
- *             email:
- *               type: string
- *             username:
- *               type: string
- *         required:
- *           - username
- *     responses:
- *       '200':
- *         description: User info updated
- *       '403':
- *         description: No authorization / user not found
- */
-
 module.exports = (app) => {
   app.put('/updateUser', (req, res, next) => {
     passport.authenticate('jwt', { session: false }, (err, user, info) => {
